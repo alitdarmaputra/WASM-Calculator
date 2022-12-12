@@ -88,7 +88,6 @@ numberButton.forEach(button => {
 });
 
 operatorButton.forEach(button => {
-    console.log(button);
     button.addEventListener("click", () => {
         if (button.innerText == '÷') {
             wasmExport.chooseOperator("/".charCodeAt(0));
