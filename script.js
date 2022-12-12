@@ -42,6 +42,13 @@ function updateDisplay() {
     if (operatorArr[0] != 0) {
         let operator = itoa(operatorArr);
         operator = operator == '/' ? '÷' : operator;
+        if (operator == '/') {
+            operator = '÷';
+        } else if (operator == '*') {
+            operator = '×';
+        } else {
+            operator = operator;
+        }
 
         let previousOperand = itoa(prevOperandArr);
         previousOperandTextElement.innerText = `${getDisplayNumber(previousOperand)} ${operator}`;
@@ -81,9 +88,12 @@ numberButton.forEach(button => {
 });
 
 operatorButton.forEach(button => {
+    console.log(button);
     button.addEventListener("click", () => {
         if (button.innerText == '÷') {
             wasmExport.chooseOperator("/".charCodeAt(0));
+        } else if (button.innerText == "×") {
+            wasmExport.chooseOperator("*".charCodeAt(0));
         } else {
             wasmExport.chooseOperator(button.innerText.charCodeAt(0));
         }
