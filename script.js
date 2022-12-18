@@ -103,7 +103,6 @@ operatorButton.forEach(button => {
 equalsButton.addEventListener("click", () => {
     wasmExport.compute();
     updateDisplay()
-    wasmExport.clear();
 });
 
 allClearButton.addEventListener("click", () => {
