@@ -30,3 +30,5 @@ Implement WebAssembly concept in simple calculator
    ```
 5. Go to [localhost:8000](http://localhost:8000) which is the default address of the app in your web browser
 
+NB:
+Use the latest firefox for better experience
